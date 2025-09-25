@@ -1,0 +1,473 @@
+<html lang="id">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>MARKET ANDRI STORE</title> 
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all 0.4s ease;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      background: linear-gradient(120deg, #89f7fe, #66a6ff, #ff9a9e, #fad0c4);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Animasi bunga */
+    .flower {
+      position: fixed;
+      top: -50px;
+      font-size: 24px;
+      pointer-events: none;
+      animation: fall 4s linear forwards;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Welcome Screen */
+    #welcome {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    #welcome.fade-out { animation: fadeOut 1s ease forwards; }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+
+    /* Partikel */
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.5); }
+      to { transform: translateY(-10vh) scale(1); }
+    }
+
+    /* Container */
+    .container {
+      text-align: center;
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .container.show { opacity: 1; transform: translateY(0); }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+
+    /* Channel Buttons */
+    .channels { margin-bottom: 50px; }
+
+    .channels a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: 0.4s;
+    }
+
+    .channels a:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Products */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transition: 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: cardIn 1s forwards;
+    }
+
+    .card:nth-child(1){ animation-delay: 0.3s; }
+    .card:nth-child(2){ animation-delay: 0.6s; }
+    .card:nth-child(3){ animation-delay: 0.9s; }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .card p, .card ul { color: #f1f1f1; }
+
+    .card ul {
+      text-align: left;
+      margin: 0 auto 20px;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .order-btn {
+      display: inline-block;
+      margin: 6px;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      background: linear-gradient(135deg, #66a6ff, #89f7fe);
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .order-btn::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.3);
+      transition: 0.4s;
+    }
+
+    .order-btn:hover::after { left: 100%; }
+
+    .order-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    /* Efek kilau */
+    .order-btn.shine::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: skewX(-25deg);
+      animation: shineMove 1.5s forwards;
+    }
+
+    @keyframes shineMove { 100% { left: 125%; } }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: #eee;
+    }
+
+    body.dark-mode .card { background: rgba(0,0,0,0.5); color: #ddd; }
+    body.dark-mode .card h3 { color: #fff; }
+    body.dark-mode .channels a {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    body.dark-mode .order-btn {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #111;
+    }
+
+    /* Toggle Dark Button */
+    .toggle-dark {
+      position: fixed;
+      top: 20px; right: 20px;
+      z-index: 100;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 50%;
+      width: 45px; height: 45px;
+      font-size: 1.2rem;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+
+    .toggle-dark:hover { transform: scale(1.1); }
+
+    /* Stiker Anime Chubby */
+    .sticker {
+      position: fixed;
+      bottom: 10px; right: 10px;
+      width: 120px;
+      z-index: 50;
+      animation: bounce 3s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Musik Box */
+    .music-box {
+      position: fixed;
+      bottom: 10px; left: 10px;
+      width: 320px;
+      z-index: 100;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.6);
+      padding: 10px;
+      color: #fff;
+    }
+
+    .music-box h4 { margin: 0 0 6px 0; font-size: 0.9rem; }
+    .music-box audio { width: 100%; }
+  </style> 
+ </head> 
+ <body> 
+  <!-- Welcome screen --> 
+  <div id="welcome">
+   ✨ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝙼𝙰𝚁𝙺𝙴𝚃 𝙰𝙽𝙳𝚁𝙸 𝚂𝚃𝙾𝚁𝙴 ✨
+  </div> 
+  <!-- Partikel --> 
+  <div class="particle" style="left:10%; animation-duration:12s;"></div> 
+  <div class="particle" style="left:30%; animation-duration:15s;"></div> 
+  <div class="particle" style="left:60%; animation-duration:18s;"></div> 
+  <div class="particle" style="left:80%; animation-duration:20s;"></div> 
+  <!-- Tombol Dark Mode --> 
+  <button class="toggle-dark" onclick="toggleDark()">🌙</button> 
+  <div class="container" id="main-content"> 
+   <header> 
+    <h1>WEB PAY ANDRI STORE</h1> 
+    <p>Welcome to market andri store,Selamat happy enjoy🔮.</p> 
+   </header> 
+   <nav class="channels"> 
+    <a href="https://t.me/botstore002" target="_blank">Kontak Owner</a> 
+    <a href="https://t.me/andribotmd" target="_blank">Info Channel</a> 
+    <a href="https://t.me/andribotmd" target="_blank">Room Public</a> 
+   </nav> 
+   <main class="products"> 
+    <!-- Produk cards --> 
+    <!-- (isi produk tetap sama, tidak diubah, hanya rapi indentasi) --> 
+    <div class="card"> 
+     <h3>Panel 1GB–10GB</h3> 
+     <p>Rp 1k–10k</p> 
+     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
+    </div> 
+    <div class="card"> 
+     <h3> dibagian kanan</h3> 
+     <ul> 
+      <li>NOKOS INDO: Rp 6000IDR</li> 
+      <li>Script Cpanel via tele: Rp 8000IDR</li> 
+      <li>Reseller Panel: Rp 10000IDR</li> 
+      <li>Partner Panel: Rp 20000IDR</li> 
+      <li>Own panel: Rp 30000IDR</li> 
+      <li>PT PRIBADI: Rp 50000IDR</li> 
+      <li>Owner Bot Whatsapp: Rp 50000IDR</li> 
+     </ul> 
+     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
+    </div> 
+    <!-- produk lainnya sama --> 
+    <div class="card"> 
+     <h3>Script BOT MD</h3> 
+     <ul> 
+      <li>No Update: Rp 30K</li> 
+      <li>Full Update: Rp 50K</li> 
+      <li>Reseller SC: Rp 60k</li> 
+      <li>Partner SC: Rp 70k</li> 
+      <li>Moderator SC: Rp 80</li> 
+      <li>Ceo SC: Rp 100</li> 
+      <li>Owner SC: Rp 120k</li> 
+     </ul> 
+     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
+    </div> 
+    <div class="card"> 
+     <h3>Script Rambo Generation Hunter</h3> 
+     <ul> 
+      <li>No Update: Rp 40K</li> 
+      <li>Full Update: Rp 80k</li> 
+      <li>Reseller SC: Rp 130k</li> 
+      <li>Partner SC: Rp 150k</li> 
+      <li>Moderator SC: Rp 170k</li> 
+      <li>Ceo SC: Rp 200k</li> 
+      <li>Owner SC: Rp 230k</li> 
+     </ul> 
+     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
+    </div> 
+    <div class="card"> 
+     <h3>Script Orbits Engine Shadow</h3> 
+     <ul> 
+      <li>No Update: Rp 40K</li> 
+      <li>Full Update: Rp 80k</li> 
+      <li>Reseller SC: Rp 130k</li> 
+      <li>Partner SC: Rp 150k</li> 
+      <li>Moderator SC: Rp 170k</li> 
+      <li>Ceo SC: Rp 200k</li> 
+      <li>Owner SC: Rp 230k</li> 
+     </ul> 
+     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
+    </div> 
+    <div class="card"> 
+     <h3>Pler dibagian kiri</h3> 
+     <ul> 
+      <li>No Kontol: Rp 70 Triliun</li> 
+      <li>Full Sprema: Rp 1300 Triliun</li> 
+      <li>Reseller Pler: Rp 999+ Triliun</li> 
+      <li>Partner Pler: Rp No</li> 
+      <li>Moderator Pler: Rp No</li> 
+      <li>Ceo Pler: Rp 96969696 Triliun</li> 
+      <li>Owner SC: Rp No</li> 
+     </ul> 
+     <a class="order-btn" href="https://pomf2.lain.la/f/ujfzeldz.jpg" target="_blank">Order</a> 
+     <a class="order-btn" href="https://t.me/Danzddyy" target="_blank">Hubungi</a> 
+    </div> 
+   </main> 
+  </div> 
+  <footer>
+    © 2025 Web MARKET ANDRI STORE- Trust is the most valuable treasure that is hard to get, but easy to lose. 
+  </footer> 
+  <!-- Stiker Anime Chubby --> 
+  <img class="sticker" src="https://files.catbox.moe/d4zp26.jpg" alt="Chubby Anime"> 
+  <!-- Musik Full --> 
+  <div class="music-box"> 
+   <h4>Now Playing 🎶</h4> 
+   <audio controls="" autoplay="" loop=""> 
+    <source src="https://files.catbox.moe/qgwh8m.mp3" type="audio/mpeg"> Browser kamu tidak mendukung audio. 
+   </audio> 
+  </div> 
+  <script>
+    // bunga jatuh
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.innerText = "👾";
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.fontSize = (20 + Math.random() * 20) + "px";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 4000);
+    }
+
+    // bikin bunga tiap scroll
+    window.addEventListener("scroll", () => {
+      for (let i = 0; i < 3; i++) createFlower();
+    });
+
+    // welcome animasi
+    window.addEventListener("load", () => {
+      const welcome = document.getElementById("welcome");
+      const main = document.getElementById("main-content");
+      setTimeout(() => {
+        welcome.classList.add("fade-out");
+        setTimeout(() => {
+          welcome.style.display = "none";
+          main.classList.add("show");
+        }, 1000);
+      }, 2000);
+    });
+
+    // Efek kilau tombol saat scroll
+    window.addEventListener("scroll", () => {
+      document.querySelectorAll(".order-btn").forEach(btn => {
+        if (!btn.classList.contains("shine")) {
+          btn.classList.add("shine");
+          setTimeout(() => btn.classList.remove("shine"), 1600);
+        }
+      });
+    });
+
+    // toggle dark mode
+    function toggleDark() {
+      document.body.classList.toggle("dark-mode");
+      const btn = document.querySelector(".toggle-dark");
+      btn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    }
+  </script> 
+ </body>
+</html>
