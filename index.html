@@ -1,472 +1,306 @@
+<!doctype html>
 <html lang="id">
- <head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>MARKETPLACE ANDRI STORE</title> 
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      transition: all 0.4s ease;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Andri Store membantu bisnis integrasi Pakasir Payment Gateway: QRIS, Virtual Account, e-wallet, kartu kredit, dan metode pembayaran populer."
+    />
+    <title>Andri Store x Pakasir - Agen Payment Gateway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#konten">Lewati ke konten utama</a>
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #89f7fe, #66a6ff, #ff9a9e, #fad0c4);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      overflow-x: hidden;
-    }
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigasi utama">
+        <a class="brand" href="#hero" aria-label="Pakasir home">
+          <span class="brand-mark">P</span>
+          <span>Andri Pay</span>
+        </a>
+        <div class="nav-links">
+          <a href="#fitur">Fitur</a>
+          <a href="#integrasi">Integrasi</a>
+          <a href="#agen">Agen</a>
+          <a href="#metode">Metode</a>
+          <a href="/docs">Docs</a>
+        </div>
+        <a class="nav-cta" href="/daftar">Daftar via Andri</a>
+      </nav>
+    </header>
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+    <main id="konten">
+      <section class="hero section-grid" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Halo! 👋 Agen integrasi Pakasir untuk bisnis modern</p>
+          <h1>Andri Store x Pakasir - Integrasi Pembayaran Mudah</h1>
+          <p class="hero-text">
+            Daftar dan integrasikan Pakasir lewat Andri Store. Kami bantu arahkan merchant ke
+            pembayaran QRIS, Virtual Account, e-wallet, kartu kredit, dan 20+ metode populer dari satu alur checkout.
+          </p>
+          <div class="hero-actions" aria-label="Aksi utama">
+            <a class="btn btn-primary" href="/daftar">
+              Daftar via Andri 🚀
+            </a>
+            <a class="btn btn-secondary" href="/docs">
+              Lihat Docs Saya
+            </a>
+          </div>
+          <div class="trust-row" aria-label="Keunggulan cepat">
+            <span>Tanpa biaya setup</span>
+            <span>Link docs domain Anda</span>
+            <span>Alur referral siap pakai</span>
+          </div>
+        </div>
 
-    /* Animasi bunga */
-    .flower {
-      position: fixed;
-      top: -50px;
-      font-size: 24px;
-      pointer-events: none;
-      animation: fall 4s linear forwards;
-      z-index: 999;
-    }
+        <aside class="payment-card" aria-label="Contoh kartu pembayaran Pakasir">
+          <div class="card-topline">
+            <span>Invoice</span>
+            <span class="status-pill">Realtime</span>
+          </div>
+          <div class="amount">Rp 99.000</div>
+          <p>Order ID: INV123123</p>
+          <div class="qr-box" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+            <strong>QRIS</strong>
+          </div>
+          <ul class="mini-list">
+            <li>Fee transparan</li>
+            <li>Expired otomatis</li>
+            <li>Webhook pembayaran sukses</li>
+          </ul>
+        </aside>
+      </section>
 
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-    }
+      <section class="section" id="fitur">
+        <div class="section-heading">
+          <p class="eyebrow">Fitur utama</p>
+          <h2>Satu layanan agen untuk bantu merchant mulai menerima pembayaran</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="brutal-card lime">
+            <span class="icon">💳</span>
+            <h3>Metode lengkap</h3>
+            <p>Terima QRIS, VA, e-wallet, kartu kredit, bank transfer, dan metode populer lain.</p>
+          </article>
+          <article class="brutal-card blue">
+            <span class="icon">⚙️</span>
+            <h3>API mudah</h3>
+            <p>Gunakan URL pembayaran atau API transaction create sesuai kebutuhan produk.</p>
+          </article>
+          <article class="brutal-card white">
+            <span class="icon">🧩</span>
+            <h3>Plugin siap pakai</h3>
+            <p>Bantu merchant memilih plugin siap pakai seperti WooCommerce atau integrasi manual sesuai kebutuhan.</p>
+          </article>
+          <article class="brutal-card green">
+            <span class="icon">📊</span>
+            <h3>Laporan realtime</h3>
+            <p>Pantau status transaksi dan validasi pembayaran melalui webhook serta detail API.</p>
+          </article>
+        </div>
+      </section>
 
-    /* Welcome Screen */
-    #welcome {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      color: #fff;
-      font-size: 2rem;
-      font-weight: 700;
-      text-align: center;
-      animation: fadeIn 1s ease forwards;
-    }
+      <section class="section integration" id="integrasi">
+        <div class="section-heading align-left">
+          <p class="eyebrow">Cara mulai</p>
+          <h2>Daftar lewat Andri, ambil API Key, lalu terima pembayaran</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Daftar gratis</h3>
+            <p>Merchant masuk lewat link Anda agar akuisisi pelanggan bisa dilacak sesuai program/ketentuan Pakasir.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Ambil API Key</h3>
+            <p>Catat Slug dan API Key dari detail proyek untuk integrasi URL atau API.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Integrasi docs</h3>
+            <p>Baca dokumentasi dari domain Anda, lalu hubungkan checkout via URL, API transaction create, simulasi sandbox, atau webhook.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Terima pembayaran</h3>
+            <p>Pelanggan membayar, sistem menerima notifikasi, lalu status dapat dicek realtime.</p>
+          </article>
+        </div>
 
-    #welcome.fade-out { animation: fadeOut 1s ease forwards; }
+        <div class="code-panel" aria-label="Contoh integrasi Pakasir">
+          <div class="window-bar"><span></span><span></span><span></span></div>
+          <pre><code>POST https://app.pakasir.com/api/transactioncreate/qris
+{
+  "project": "slug-toko",
+  "order_id": "INV123123",
+  "amount": 99000,
+  "api_key": "API_KEY_ANDA"
+}</code></pre>
+        </div>
+      </section>
 
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+      <section class="section agent-section" id="agen">
+        <div class="agent-card">
+          <div>
+            <p class="eyebrow">Mode agen / referral</p>
+            <h2>Siapkan link docs dan daftar pakai domain Anda</h2>
+            <p>
+              Semua tombol Docs dan Daftar di website ini memakai route internal <strong>/docs</strong>
+              dan <strong>/daftar</strong>. Saat domain Andri Store siap, cukup atur environment
+              <strong>DOCS_URL</strong> dan <strong>SIGNUP_URL</strong> ke link referral/partner Anda tanpa ubah HTML.
+            </p>
+            <p class="small-note">
+              Catatan: fee, bonus, atau komisi mengikuti program dan ketentuan resmi Pakasir.
+              Website ini membantu alur promosi, edukasi, dan onboarding merchant melalui link Anda.
+            </p>
+          </div>
+          <div class="agent-actions">
+            <a class="btn btn-primary" href="/daftar">Daftarkan Merchant</a>
+            <a class="btn btn-secondary" href="/docs">Buka Docs Saya</a>
+          </div>
+        </div>
+      </section>
 
-    /* Partikel */
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: rgba(255,255,255,0.6);
-      border-radius: 50%;
-      animation: float 10s linear infinite;
-    }
+      <section class="section methods" id="metode">
+        <div class="section-heading">
+          <p class="eyebrow">20+ metode pembayaran</p>
+          <h2>Bayar dari channel favorit pelanggan</h2>
+        </div>
+        <div class="method-cloud" aria-label="Daftar metode pembayaran">
+          <span>GoPay</span>
+          <span>OVO</span>
+          <span>DANA</span>
+          <span>QRIS</span>
+          <span>BNI VA</span>
+          <span>BRI VA</span>
+          <span>CIMB Niaga VA</span>
+          <span>Permata VA</span>
+          <span>Maybank VA</span>
+          <span>Sampoerna VA</span>
+          <span>BNC VA</span>
+          <span>Artha Graha VA</span>
+          <span>ATM Bersama</span>
+          <span>PayPal</span>
+          <span>Bank Transfer</span>
+          <span>Kartu Kredit</span>
+        </div>
+      </section>
 
-    @keyframes float {
-      from { transform: translateY(100vh) scale(0.5); }
-      to { transform: translateY(-10vh) scale(1); }
-    }
+      <section class="section playground" aria-labelledby="generator-title">
+        <div>
+          <p class="eyebrow">Demo URL pembayaran</p>
+          <h2 id="generator-title">Buat contoh link checkout Pakasir</h2>
+          <p>
+            Generator ini memakai logic dari kode <strong>Pakasir.getPaymentUrl</strong>: sanitize order_id,
+            validasi nominal minimum, estimasi fee, total pembayaran, expired 24 jam, dan parameter metode pembayaran.
+          </p>
+        </div>
+        <form class="generator" id="paymentForm">
+          <label>
+            Slug Proyek
+            <input name="slug" placeholder="contoh: tokokamu" required />
+          </label>
+          <label>
+            Nominal
+            <input name="amount" inputmode="numeric" placeholder="99000" required />
+          </label>
+          <label>
+            Order ID
+            <input name="orderId" placeholder="INV123123" minlength="5" required />
+          </label>
+          <label>
+            Metode Pembayaran
+            <select name="method" required>
+              <option value="all">Semua Metode</option>
+              <option value="qris">QRIS</option>
+              <option value="paypal">PayPal</option>
+              <option value="cimb_niaga_va">CIMB Niaga VA</option>
+              <option value="bni_va">BNI VA</option>
+              <option value="sampoerna_va">Sampoerna VA</option>
+              <option value="bnc_va">BNC VA</option>
+              <option value="maybank_va">Maybank VA</option>
+              <option value="permata_va">Permata VA</option>
+              <option value="atm_bersama_va">ATM Bersama VA</option>
+              <option value="artha_graha_va">Artha Graha VA</option>
+              <option value="bri_va">BRI VA</option>
+            </select>
+          </label>
+          <label>
+            Redirect URL <span class="optional">opsional</span>
+            <input name="redirectUrl" type="url" placeholder="https://domain-anda.com/sukses" />
+          </label>
+          <button class="btn btn-primary" type="submit">Generate Payload</button>
+          <output id="paymentOutput" aria-live="polite"></output>
+        </form>
+      </section>
 
-    /* Container */
-    .container {
-      text-align: center;
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
+      <section class="testimonial section">
+        <blockquote>
+          “Pakasir mempermudah transaksi bisnis online saya!”
+          <cite>- Andri, UMKM</cite>
+        </blockquote>
+        <div class="cta-box">
+          <h2>Mulai sekarang! 🚀</h2>
+          <p>Daftar lewat link Andri Store & integrasi cepat dengan panduan docs dari domain Anda.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/daftar">Daftar via Andri</a>
+            <a class="btn btn-secondary" href="/docs">Lihat Docs Saya</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    .container.show { opacity: 1; transform: translateY(0); }
+    <footer class="footer">
+      <span>© 2026 Andri Store - Agen Integrasi Pakasir</span>
+      <a href="/docs">Dokumentasi via Domain Andri</a>
+    </footer>
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 15px rgba(0,0,0,0.3);
-    }
+    <script>
+      const form = document.querySelector('#paymentForm');
+      const output = document.querySelector('#paymentOutput');
 
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 40px;
-      opacity: 0.9;
-    }
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        data.qrisOnly = Boolean(data.qrisOnly);
 
-    /* Channel Buttons */
-    .channels { margin-bottom: 50px; }
+        const response = await fetch('/api/payment-url', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await response.json();
 
-    .channels a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #fff;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: 0.4s;
-    }
-
-    .channels a:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.3);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    }
-
-    /* Products */
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-      transition: 0.4s ease;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: cardIn 1s forwards;
-    }
-
-    .card:nth-child(1){ animation-delay: 0.3s; }
-    .card:nth-child(2){ animation-delay: 0.6s; }
-    .card:nth-child(3){ animation-delay: 0.9s; }
-
-    @keyframes cardIn {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .card h3 {
-      color: #fff;
-      margin-bottom: 12px;
-      font-size: 1.4rem;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    .card p, .card ul { color: #f1f1f1; }
-
-    .card ul {
-      text-align: left;
-      margin: 0 auto 20px;
-      padding-left: 20px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* Buttons */
-    .order-btn {
-      display: inline-block;
-      margin: 6px;
-      padding: 12px 24px;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      background: linear-gradient(135deg, #66a6ff, #89f7fe);
-      color: #fff;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .order-btn::after {
-      content: "";
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: rgba(255,255,255,0.3);
-      transition: 0.4s;
-    }
-
-    .order-btn:hover::after { left: 100%; }
-
-    .order-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-    }
-
-    /* Efek kilau */
-    .order-btn.shine::before {
-      content: "";
-      position: absolute;
-      top: 0; left: -75%;
-      width: 50%; height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.6) 50%,
-        rgba(255,255,255,0) 100%
-      );
-      transform: skewX(-25deg);
-      animation: shineMove 1.5s forwards;
-    }
-
-    @keyframes shineMove { 100% { left: 125%; } }
-
-    /* Footer */
-    footer {
-      margin-top: 60px;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    /* Dark mode */
-    body.dark-mode {
-      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-      color: #eee;
-    }
-
-    body.dark-mode .card { background: rgba(0,0,0,0.5); color: #ddd; }
-    body.dark-mode .card h3 { color: #fff; }
-    body.dark-mode .channels a {
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    body.dark-mode .order-btn {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #111;
-    }
-
-    /* Toggle Dark Button */
-    .toggle-dark {
-      position: fixed;
-      top: 20px; right: 20px;
-      z-index: 100;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(10px);
-      border: none;
-      border-radius: 50%;
-      width: 45px; height: 45px;
-      font-size: 1.2rem;
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: 0.3s ease;
-    }
-
-    .toggle-dark:hover { transform: scale(1.1); }
-
-    /* Stiker Anime Chubby */
-    .sticker {
-      position: fixed;
-      bottom: 10px; right: 10px;
-      width: 120px;
-      z-index: 50;
-      animation: bounce 3s infinite ease-in-out;
-      pointer-events: none;
-    }
-
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    /* Musik Box */
-    .music-box {
-      position: fixed;
-      bottom: 10px; left: 10px;
-      width: 320px;
-      z-index: 100;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      border-radius: 12px;
-      overflow: hidden;
-      background: rgba(0,0,0,0.6);
-      padding: 10px;
-      color: #fff;
-    }
-
-    .music-box h4 { margin: 0 0 6px 0; font-size: 0.9rem; }
-    .music-box audio { width: 100%; }
-  </style> 
- </head> 
- <body> 
-  <!-- Welcome screen --> 
-  <div id="welcome">
-   ✨ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝙼𝙰𝚁𝙺𝙴𝚃𝙿𝙻𝙰𝙲𝙴 𝙰𝙽𝙳𝚁𝙸 𝚂𝚃𝙾𝚁𝙴 ✨
-  </div> 
-  <!-- Partikel --> 
-  <div class="particle" style="left:10%; animation-duration:12s;"></div> 
-  <div class="particle" style="left:30%; animation-duration:15s;"></div> 
-  <div class="particle" style="left:60%; animation-duration:18s;"></div> 
-  <div class="particle" style="left:80%; animation-duration:20s;"></div> 
-  <!-- Tombol Dark Mode --> 
-  <button class="toggle-dark" onclick="toggleDark()">🌙</button> 
-  <div class="container" id="main-content"> 
-   <header> 
-    <h1>𝚆𝙴𝙱 𝙰𝙻𝙻 𝙿𝚁𝙾𝙳𝚄𝙲𝚃 𝙰𝙽𝙳𝚁𝙸 𝚂𝚃𝙾𝚁𝙴</h1> 
-    <p>𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕋𝕠 𝕄𝕒𝕣𝕜𝕖𝕥 𝔸𝕟𝕕𝕣𝕚 𝕊𝕥𝕠𝕣𝕖,𝕊𝕖𝕝𝕒𝕞𝕒𝕥 ℍ𝕒𝕡𝕡𝕪 𝔼𝕟𝕛𝕠𝕪𝕪🔮.</p> 
-   </header> 
-   <nav class="channels"> 
-    <a href="https://t.me/Androstore022" target="_blank">Kontak Owner</a> 
-    <a href="https://t.me/botstore002" target="_blank">Info Channel</a> 
-    <a href="https://t.me/andribotmd" target="_blank">Room Public</a> 
-   </nav> 
-   <main class="products"> 
-    <!-- Produk cards --> 
-    <!-- (isi produk tetap sama, tidak diubah, hanya rapi indentasi) --> 
-    <div class="card"> 
-     <h3>Panel 1GB–10GB</h3> 
-     <p>Rp 1k–10k</p> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
-    </div> 
-    <div class="card"> 
-     <h3> 𝙾𝙿𝙴𝙽 𝙿𝙰𝙽𝙴𝙻 𝙿𝚁𝙸𝚅𝙰𝚃𝙴</h3> 
-     <ul> 
-      <li>NOKOS INDO: Rp 6.000IDR</li> 
-      <li>Script Cpanel via tele: Rp 8.000IDR</li> 
-      <li>Reseller Panel: Rp15.000IDR</li> 
-      <li>Partner Panel: Rp 25.000IDR</li> 
-      <li>Own panel: Rp 35.000IDR</li> 
-      <li>Partner panel: Rp 50.000IDR</li> 
-      <li>Owner Bot Whatsapp: Rp 50.000IDR</li></ul> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
-    </div> 
-    <!-- produk lainnya sama --> 
-    <div class="card"> 
-     <h3>Script BOT MD</h3> 
-     <ul> 
-      <li>No Update: Rp 30K</li> 
-      <li>Full Update: Rp 50K</li> 
-      <li>Reseller SC: Rp 60k</li> 
-      <li>Partner SC: Rp 70k</li> 
-      <li>Moderator SC: Rp 80</li> 
-      <li>Ceo SC: Rp 100</li> 
-      <li>Owner SC: Rp 120k</li> 
-     </ul> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
-    </div> 
-    <div class="card"> 
-     <h3>Script Rambo Generation Hunter</h3> 
-     <ul> 
-      <li>No Update: Rp 40K</li> 
-      <li>Full Update: Rp 80k</li> 
-      <li>Reseller SC: Rp 130k</li> 
-      <li>Partner SC: Rp 150k</li> 
-      <li>Moderator SC: Rp 170k</li> 
-      <li>Ceo SC: Rp 200k</li> 
-      <li>Owner SC: Rp 230k</li> 
-     </ul> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
-    </div> 
-    <div class="card"> 
-     <h3>Script Orbits Engine Shadow</h3> 
-     <ul> 
-      <li>No Update: Rp 40K</li> 
-      <li>Full Update: Rp 80k</li> 
-      <li>Reseller SC: Rp 130k</li> 
-      <li>Partner SC: Rp 150k</li> 
-      <li>Moderator SC: Rp 170k</li> 
-      <li>Ceo SC: Rp 200k</li> 
-      <li>Owner SC: Rp 230k</li> 
-     </ul> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://wa.me/62895404693393" target="_blank">Hubungi</a> 
-    </div> 
-    <div class="card"> 
-     <h3>OPEN PANEL PUBLIC</h3> 
-     <ul> 
-      <li>Resseler panel: Rp 8.000IDR</li> 
-      <li>Admin Panel: Rp 15.000IDR</li> 
-      <li>Patnert panel: Rp 20.000IDR</li> 
-      <li>Tangan Kanan panel: Rp 30.000IDR</li> 
-      <li>Owner Panel: Rp 35.000IDR</li> 
-      <li>Script Cpanel: Rp 10.000IDR</li> 
-      <li>Owner SC: Rp 40.000IDR</li> 
-     </ul> 
-     <a class="order-btn" href="https://files.catbox.moe/rvco9h.jpg" target="_blank">Order</a> 
-     <a class="order-btn" href="https://t.me/Androstore022" target="_blank">Hubungi</a> 
-    </div> 
-   </main> 
-  </div> 
-  <footer>
-    © 2025 Web MARKET ANDRI STORE- Trust is the most valuable treasure that is hard to get, but easy to lose. 
-  </footer> 
-  <!-- Stiker Anime Chubby --> 
-  <img class="sticker" src="https://files.catbox.moe/d4zp26.jpg" alt="Chubby Anime"> 
-  <!-- Musik Full --> 
-  <div class="music-box"> 
-   <h4>Now Playing 🎶</h4> 
-   <audio controls="" autoplay="" loop=""> 
-    <source src="https://files.catbox.moe/qgwh8m.mp3" type="audio/mpeg"> Browser kamu tidak mendukung audio. 
-   </audio> 
-  </div> 
-  <script>
-    // bunga jatuh
-    function createFlower() {
-      const flower = document.createElement("div");
-      flower.classList.add("flower");
-      flower.innerText = "👾";
-      flower.style.left = Math.random() * window.innerWidth + "px";
-      flower.style.fontSize = (20 + Math.random() * 20) + "px";
-      document.body.appendChild(flower);
-      setTimeout(() => flower.remove(), 4000);
-    }
-
-    // bikin bunga tiap scroll
-    window.addEventListener("scroll", () => {
-      for (let i = 0; i < 3; i++) createFlower();
-    });
-
-    // welcome animasi
-    window.addEventListener("load", () => {
-      const welcome = document.getElementById("welcome");
-      const main = document.getElementById("main-content");
-      setTimeout(() => {
-        welcome.classList.add("fade-out");
-        setTimeout(() => {
-          welcome.style.display = "none";
-          main.classList.add("show");
-        }, 1000);
-      }, 2000);
-    });
-
-    // Efek kilau tombol saat scroll
-    window.addEventListener("scroll", () => {
-      document.querySelectorAll(".order-btn").forEach(btn => {
-        if (!btn.classList.contains("shine")) {
-          btn.classList.add("shine");
-          setTimeout(() => btn.classList.remove("shine"), 1600);
+        if (!response.ok) {
+          output.innerHTML = `<span class="error">${result.error}</span>`;
+          return;
         }
-      });
-    });
 
-    // toggle dark mode
-    function toggleDark() {
-      document.body.classList.toggle("dark-mode");
-      const btn = document.querySelector(".toggle-dark");
-      btn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    }
-  </script> 
- </body>
+        const rupiah = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 });
+        output.innerHTML = `
+          <div class="result-card">
+            <strong>Payload demo berhasil dibuat</strong>
+            <dl>
+              <div><dt>Metode</dt><dd>${result.payment_method_label}</dd></div>
+              <div><dt>Order ID</dt><dd>${result.order_id}</dd></div>
+              <div><dt>Amount</dt><dd>${rupiah.format(result.amount)}</dd></div>
+              <div><dt>Fee Estimasi</dt><dd>${rupiah.format(result.fee)}</dd></div>
+              <div><dt>Total Bayar</dt><dd>${rupiah.format(result.total_payment)}</dd></div>
+              <div><dt>Expired</dt><dd>${new Date(result.expired_at).toLocaleString('id-ID')}</dd></div>
+            </dl>
+            <a href="${result.payment_url}" target="_blank" rel="noreferrer">${result.payment_url}</a>
+          </div>
+        `;
+      });
+    </script>
+  </body>
 </html>
