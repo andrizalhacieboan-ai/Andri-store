@@ -1,0 +1,22 @@
+{
+  "name": "pakasir-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page Neo-Brutalism untuk agen integrasi Pakasir Payment Gateway.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "pakasir",
+    "payment-gateway",
+    "qris",
+    "virtual-account",
+    "neo-brutalism"
+  ],
+  "author": "Andri Store",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
